@@ -1,10 +1,7 @@
 #!/usr/bin/env ruby
 
-require 'rubygems'
+require File.expand_path '../lib/githubrepo', File.dirname(__FILE__)
 require 'commander/import'
-require 'pry'
-
-require './lib/create'
 
 program :name, 'githubrepo'
 program :version, '0.0.2'
@@ -47,5 +44,5 @@ default_command :create
 def cli(attributes)
   puts attributes
   Githubrepo.create(attributes)
-  # GitHubRepo.create({ :username => 'elikem', :password => 'testpassword2014', :repository => 'the_goonies' })
+  # GitHubRepo.create({ :username => 'elikem', :password => 'some_password', :repository => 'the_goonies' })
 end

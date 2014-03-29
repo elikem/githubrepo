@@ -2,10 +2,20 @@ PATH
   remote: .
   specs:
     githubrepo (0.0.2)
+      commander (~> 4.1.6)
+      httparty (~> 0.13.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
+    commander (4.1.6)
+      highline (~> 1.6.11)
+    highline (1.6.21)
+    httparty (0.13.0)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
+    multi_xml (0.5.5)
     rake (10.1.1)
 
 PLATFORMS
