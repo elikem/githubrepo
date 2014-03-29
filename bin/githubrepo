@@ -7,7 +7,7 @@ require 'pry'
 require './lib/create'
 
 program :name, 'githubrepo'
-program :version, '0.0.1'
+program :version, '0.0.2'
 program :description, 'Create GitHub repositories from the command line'
 program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 
