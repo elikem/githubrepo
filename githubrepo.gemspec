@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['elikem@gmail.com']
   spec.description   = %q{Create GitHub repositories from the command line}
   spec.summary       = %q{CLI to create repositories}
-  spec.homepage      = ''
+  spec.homepage      = 'https://github.com/elikem/githubrepo'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files`.split($/)
