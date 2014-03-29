@@ -30,7 +30,7 @@ command :create do |c|
       exit
     end
 
-    username = ask 'Username: '
+    username = ask "'Username for 'https://github.com': "
     if username.length == 0
       puts 'invalid option -- please enter a username'
       exit
