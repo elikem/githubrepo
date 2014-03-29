@@ -4,7 +4,7 @@ require File.expand_path '../lib/githubrepo', File.dirname(__FILE__)
 require 'commander/import'
 
 program :name, 'githubrepo'
-program :version, '0.0.2'
+program :version, '0.0.3'
 program :description, 'Create GitHub repositories from the command line'
 program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 
