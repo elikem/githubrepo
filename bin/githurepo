@@ -4,7 +4,7 @@ require File.expand_path '../lib/githubrepo', File.dirname(__FILE__)
 require 'commander/import'
 
 program :name, 'githubrepo'
-program :version, '0.0.3'
+program :version, '0.1.0'
 program :description, 'Create GitHub repositories from the command line'
 program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 
@@ -42,7 +42,5 @@ end
 default_command :create
 
 def cli(attributes)
-  puts attributes
   Githubrepo.create(attributes)
-  # GitHubRepo.create({ :username => 'elikem', :password => 'some_password', :repository => 'the_goonies' })
 end
