@@ -41,9 +41,9 @@ module Githubrepo
   def self.parse_response_from(post)
     attributes = post
 
-    git_url =
-        if attributes['git_url'] != nil
-          attributes['git_url']
+    clone_url =
+        if attributes['clone_url'] != nil
+          attributes['clone_url']
         end
 
     message =
@@ -57,7 +57,7 @@ module Githubrepo
         end
 
     # messages to console
-    puts git_url if git_url
+    puts clone_url if clone_url
     puts message.capitalize if message
     puts error_message.capitalize if error_message
   end

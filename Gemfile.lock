@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    githubrepo (0.0.4)
+    githubrepo (0.1.0)
       commander (~> 4.1.6)
       httparty (~> 0.13.0)
       json (~> 1.8.1)
