@@ -1,5 +1,6 @@
 require 'json'
 require 'httparty'
+require 'clipboard'
 
 module Githubrepo
 
@@ -57,7 +58,10 @@ module Githubrepo
         end
 
     # messages to console
-    puts clone_url if clone_url
+    if clone_url
+      puts "#{clone_url}  ---  COPIED TO CLIPBOARD"
+      Clipboard.copy clone_url
+    end
     puts message.capitalize if message
     puts error_message.capitalize if error_message
   end

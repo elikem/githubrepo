@@ -26,4 +26,5 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'httparty', '~> 0.13.0'
   spec.add_runtime_dependency 'json', '~> 1.8.1'
   spec.add_runtime_dependency 'json_pure', '~> 1.8.1'
+  spec.add_runtime_dependency 'clipboard', '~> 1.0.5'
 end
