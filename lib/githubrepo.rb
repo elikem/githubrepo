@@ -1,6 +1,7 @@
 require 'json'
 require 'httparty'
 require 'clipboard'
+require 'os'
 
 module Githubrepo
 
@@ -59,8 +60,16 @@ module Githubrepo
 
     # messages to console
     if clone_url
-      puts "#{clone_url}  ---  COPIED TO CLIPBOARD"
-      Clipboard.copy clone_url
+      if OS.mac?
+        puts "#{clone_url}  ---  COPIED TO CLIPBOARD"
+        Clipboard.copy clone_url
+      elsif OS.linux?
+        puts clone_url
+        Clipboard.copy clone_url
+        puts "If xclip is installed, repository URL has been added to your clipboard."
+      else
+        puts clone_url
+      end
     end
     puts message.capitalize if message
     puts error_message.capitalize if error_message
