@@ -5,7 +5,10 @@ require 'commander/import'
 
 program :name, 'githubrepo'
 program :version, '0.1.0'
-program :description, 'Create GitHub repositories from the command line'
+program :description, 'Create GitHub repositories from the command line.
+OSX: repository URL is automatically copied to clipboard.
+Linux: install xclip (sudo apt-get xclip) and URL will auto copy to clipboard.
+Windows: run "gem install ffi" and URL will auto copy to clipboard.'
 program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 
 command :create do |c|
