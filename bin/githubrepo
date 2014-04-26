@@ -30,6 +30,8 @@ command :create do |c|
       exit
     end
 
+    description = ask "Description for repository '#{repository}': "
+
     username = ask "'Username for 'https://github.com': "
     if username.length == 0
       puts 'invalid option -- please enter a username'
@@ -38,7 +40,7 @@ command :create do |c|
 
     password = ask('Password: ') { |char| char.echo = false }
 
-    cli({ :repository => repository, :username => username, :password => password })
+    cli({ :repository => repository, :description => description, :username => username, :password => password })
   end
 end
 
