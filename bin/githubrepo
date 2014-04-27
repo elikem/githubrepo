@@ -14,14 +14,13 @@ program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 command :create do |c|
   c.syntax = 'githubrepo create [options]'
 
-  c.description = 'githubrepo create REPO_NAME'
+  c.description = 'githubrepo create REPO_NAME -d REPO_DESCRIPTION'
 
   c.example 'usage 1', 'githubrepo create REPO_NAME'
   c.example 'usage 2 -- create is the default action for this gem', 'githubrepo REPO_NAME'
+  c.example 'description', 'githubrepo create REPO_NAME -d "short description"'
 
-  #the ability to add a description will come later
-  #c.example 'description', 'githubrepo create REPO_NAME -d "short description"'
-  #c.option '--description STRING', String, 'A short description of the repository'
+  c.option '--description STRING', String, 'A short description of the repository'
 
   c.action do |args, options|
     repository = args.shift
@@ -29,8 +28,6 @@ command :create do |c|
       puts 'invalid option -- githubrepo create REPO_NAME'
       exit
     end
-
-    description = ask "Description for repository '#{repository}': "
 
     username = ask "'Username for 'https://github.com': "
     if username.length == 0
@@ -40,7 +37,7 @@ command :create do |c|
 
     password = ask('Password: ') { |char| char.echo = false }
 
-    cli({ :repository => repository, :description => description, :username => username, :password => password })
+    cli({ :repository => repository, :description => options.description, :username => username, :password => password })
   end
 end
 
