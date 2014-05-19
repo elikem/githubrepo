@@ -19,6 +19,9 @@ Or install it yourself as:
 
     $ githubrepo create REPOSITORY_NAME
 
+To add an optional repository description:
+
+    $ githubrepo create REPOSITORY_NAME -d REPO_DESCRIPTION
 
 For more details use help flag:
 
