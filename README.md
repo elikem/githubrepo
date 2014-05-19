@@ -5,6 +5,7 @@ This is a fork of a great gem created by [Elikem Adadevoh](https://github.com/el
 
 This is a simple Ruby gem that will allow the user to create GitHub a repository with an optional description from the command line. It will copy the new repository path to the clipboard so it can easily be pasted when running `git remote add` 
 
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -17,7 +18,10 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install githubrepo, :git => 'git://github.com/supremebeing7/githubrepo.git'
+    $ git clone https://github.com/supremebeing7/githubrepo.git
+    $ cd githubrepo
+    $ rake install 
+    $ gem install githubrepo
 
 
 ## Usage
