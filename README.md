@@ -1,10 +1,13 @@
 # Githubrepo
 
+This is a fork of a great gem created by [Elikem Adadevoh](https://github.com/elikem).  I've added a couple small mods.
+[View original gem](https://github.com/elikem/githubrepo)
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'githubrepo'
+    gem 'githubrepo', :git => 'git://github.com/supremebeing7/githubrepo.git'
 
 And then execute:
 
@@ -12,7 +15,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install githubrepo
+    $ gem install githubrepo, :git => 'git://github.com/supremebeing7/githubrepo.git'
 
 
 ## Usage
