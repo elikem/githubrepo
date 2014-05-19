@@ -1,7 +1,9 @@
 # Githubrepo
 
-This is a fork of a great gem created by [Elikem Adadevoh](https://github.com/elikem).  I've added a couple small mods.
-[View original gem](https://github.com/elikem/githubrepo)
+This is a fork of a great gem created by [Elikem Adadevoh](https://github.com/elikem). I've added a couple small mods.  
+[View original gem](https://github.com/elikem/githubrepo)  
+
+This is a simple Ruby gem that will allow the user to create GitHub a repository with an optional description from the command line. It will copy the new repository path to the clipboard so it can easily be pasted when running `git remote add` 
 
 ## Installation
 
@@ -31,10 +33,9 @@ For more details use help flag:
     $ githubrepo --help
 
 
-## To Do
-
-
 ## Contributing
+
+Since this is already a fork, I highly encourage you to contribute instead to the [original gem](https://github.com/elikem/githubrepo). However, if you still want to contribute to this one:  
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
