@@ -18,7 +18,7 @@ command :create do |c|
 
   c.example 'usage 1', 'githubrepo create REPO_NAME'
   c.example 'usage 2 -- create is the default action for this gem', 'githubrepo REPO_NAME'
-  c.example 'description', 'githubrepo create REPO_NAME -d "short description"'
+  c.example 'usage 3', 'githubrepo REPO_NAME -d "short description"'
 
   c.option '--description STRING', String, 'A short description of the repository'
 
