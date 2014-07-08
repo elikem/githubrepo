@@ -24,7 +24,7 @@ For more details use help flag:
 To run the app in IRB for debugging run
 
     $ rake console
-    $ Githubrepo
+    $ Githubrepo.create(attributes)
     
 
 ## Contributing

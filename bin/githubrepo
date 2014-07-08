@@ -18,31 +18,39 @@ command :create do |c|
 
   c.description = 'githubrepo create REPO_NAME -d REPO_DESCRIPTION'
 
-  c.example 'usage 1', 'githubrepo create REPO_NAME'
-  c.example 'usage 2', 'githubrepo REPO_NAME'
+  c.example 'usage', 'githubrepo create REPO_NAME'
+  c.example 'usage', 'githubrepo REPO_NAME'
   c.example 'description', 'githubrepo create REPO_NAME -d "short description"'
 
   c.option '--description STRING', String, 'A short description of the repository'
 
   c.action do |args, options|
     repository = args.shift
+    description = options.description
+
+    # check for repository argument
     if repository.nil?
+      puts 'repository'
       puts 'invalid option -- githubrepo create REPO_NAME'
       exit
     end
 
+    # get and check name
     username = ask "'Username for 'https://github.com': "
     if username.length == 0
       puts 'invalid option -- please enter a username'
       exit
     end
 
+    # set password
     password = ask('Password: ') { |char| char.echo = false }
 
-    cli({ :repository => repository, :description => options.description, :username => username, :password => password })
+    # package attributes for http api payload
+    cli({ :repository => repository, :description => description, :username => username, :password => password })
   end
 end
 
+# set default action for gem
 default_command :create
 
 def cli(attributes)
