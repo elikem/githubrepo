@@ -1,32 +1,31 @@
 # Githubrepo
+This gem is a Command Line Interface to do only thing... create GitHub repositories.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-    gem 'githubrepo'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Download this gem:
 
     $ gem install githubrepo
 
 
 ## Usage
 
-    $ githubrepo create REPOSITORY_NAME
+    $ githubrepo create REPOSITORY_NAME  
+    $ githubrepo REPOSITORY_NAME
+    
 
-
+The default operation on githubrepo is to create, so you can skip the create action.
 For more details use help flag:
 
     $ githubrepo --help
 
 
-## To Do
+## Development
+To run the app in IRB for debugging run
 
+    $ rake console
+    $ Githubrepo
+    
 
 ## Contributing
 
