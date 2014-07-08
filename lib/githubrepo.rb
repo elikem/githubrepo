@@ -29,10 +29,8 @@ module Githubrepo
         },
 
         :body => {
-            'name' => attributes[:repository]
-
-            # feature coming at a future date
-            #'description' => description
+            'name' => attributes[:repository],
+            'description' => attributes[:description]
         }.to_json
     )
 
