@@ -1,45 +1,38 @@
 # Githubrepo
-
-This is a fork of a great gem created by [Elikem Adadevoh](https://github.com/elikem). I've added a couple small mods.  
-[View original gem](https://github.com/elikem/githubrepo)  
-
-This is a simple Ruby gem that will allow the user to create GitHub a repository with an optional description from the command line. It will copy the new repository path to the clipboard so it can easily be pasted when running `git remote add` 
-
+This gem is a Command Line Interface to do only thing... create GitHub repositories.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Download this gem:
 
-    gem 'githubrepo', :git => 'git://github.com/supremebeing7/githubrepo.git'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ git clone https://github.com/supremebeing7/githubrepo.git
-    $ cd githubrepo
-    $ rake install 
     $ gem install githubrepo
 
 
 ## Usage
 
     $ githubrepo create REPOSITORY_NAME
+    $ githubrepo REPOSITORY_NAME
+    $ githubrepo REPOSITORY_NAME -d "short description"
 
-To add an optional repository description:
+    # To get back the SSH URL instead of HTTP, add the -s or --ssh flag:
+    $ githubrepo REPOSITORY_NAME -s
 
-    $ githubrepo create REPOSITORY_NAME -d REPO_DESCRIPTION
 
+
+The default operation on githubrepo is to create, so you can skip the create action.
 For more details use help flag:
 
     $ githubrepo --help
 
 
-## Contributing
+## Development
+To run the app in IRB for debugging run
 
-Since this is already a fork, I highly encourage you to contribute instead to the [original gem](https://github.com/elikem/githubrepo). However, if you still want to contribute to this one:  
+    $ rake console
+    $ Githubrepo.create(attributes)
+
+
+## Contributing
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)

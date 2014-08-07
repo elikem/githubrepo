@@ -66,6 +66,16 @@ module Githubrepo
         puts repo_url
         Clipboard.copy repo_url
         puts "If xclip is installed, repository URL has been added to your clipboard."
+        puts "debian/ubuntu: apt-get install xclip"
+
+      # Add windows support in the future
+      # elsif OS.windows?
+      #   Clipboard.copy clone_url
+      #   # Will Clipboard output clone_url to console if ffi is not installed?
+      #   # Below is what it looks like when Clipboard requirements are met
+      #   # https://github.com/user/*.git  ---  COPIED TO CLIPBOARD 
+      #   puts "If ffi is installed, repository URL has been added to your clipboard."
+      #   puts "for installation: gem install ffi"
       else
         puts repo_url
       end
