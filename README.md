@@ -10,9 +10,14 @@ Download this gem:
 
 ## Usage
 
-    $ githubrepo create REPOSITORY_NAME  
+    $ githubrepo create REPOSITORY_NAME
     $ githubrepo REPOSITORY_NAME
-    
+    $ githubrepo REPOSITORY_NAME -d "short description"
+
+    # To get back the SSH URL instead of HTTP, add the -s or --ssh flag:
+    $ githubrepo REPOSITORY_NAME -s
+
+
 
 The default operation on githubrepo is to create, so you can skip the create action.
 For more details use help flag:
@@ -25,7 +30,7 @@ To run the app in IRB for debugging run
 
     $ rake console
     $ Githubrepo.create(attributes)
-    
+
 
 ## Contributing
 

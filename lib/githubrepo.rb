@@ -34,17 +34,18 @@ module Githubrepo
         }.to_json
     )
 
-    Githubrepo.parse_response_from(post)
+    Githubrepo.parse_response_from(post, attributes[:wants_ssh])
   end
 
   # DRY this by moving to a Parse.response_from(post)
-  def self.parse_response_from(post)
+  def self.parse_response_from(post, wants_ssh)
     attributes = post
 
-    clone_url =
-        if attributes['clone_url'] != nil
-          attributes['clone_url']
-        end
+    if wants_ssh
+      repo_url = attributes['ssh_url']
+    else
+      repo_url = attributes['clone_url']
+    end
 
     message =
         if attributes['message'] != nil
@@ -57,13 +58,13 @@ module Githubrepo
         end
 
     # messages to console
-    if clone_url
+    if repo_url
       if OS.mac?
-        puts "#{clone_url}  ---  COPIED TO CLIPBOARD"
-        Clipboard.copy clone_url
+        puts "#{repo_url}  ---  COPIED TO CLIPBOARD"
+        Clipboard.copy repo_url
       elsif OS.linux?
-        puts clone_url
-        Clipboard.copy clone_url
+        puts repo_url
+        Clipboard.copy repo_url
         puts "If xclip is installed, repository URL has been added to your clipboard."
         puts "debian/ubuntu: apt-get install xclip"
 
@@ -76,7 +77,7 @@ module Githubrepo
       #   puts "If ffi is installed, repository URL has been added to your clipboard."
       #   puts "for installation: gem install ffi"
       else
-        puts clone_url
+        puts repo_url
       end
     end
     puts message.capitalize if message
