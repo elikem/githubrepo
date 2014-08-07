@@ -22,7 +22,7 @@ command :create do |c|
   c.example 'usage 4 -- get the SSH link instead of HTTP', 'githubrepo REPO_NAME -s'
 
   c.option '--description STRING', String, 'A short description of the repository'
-  c.option '--ssh', true
+  c.option '--ssh', 'Gives the link back as SSH instead of HTTP'
 
   c.action do |args, options|
     repository = args.shift
