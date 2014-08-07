@@ -14,13 +14,15 @@ program :help, 'Author', 'Elikem Adadevoh <elikem@gmail.com>'
 command :create do |c|
   c.syntax = 'githubrepo create [options]'
 
-  c.description = 'githubrepo create REPO_NAME -d REPO_DESCRIPTION'
+  c.description = 'githubrepo create REPO_NAME -d REPO_DESCRIPTION --ssh [optional, will give you the SSH link instead of HTTP]'
 
   c.example 'usage 1', 'githubrepo create REPO_NAME'
   c.example 'usage 2 -- create is the default action for this gem', 'githubrepo REPO_NAME'
   c.example 'usage 3', 'githubrepo REPO_NAME -d "short description"'
+  c.example 'usage 4 -- get the SSH link instead of HTTP', 'githubrepo REPO_NAME -s'
 
   c.option '--description STRING', String, 'A short description of the repository'
+  c.option '--ssh', true
 
   c.action do |args, options|
     repository = args.shift
@@ -37,7 +39,7 @@ command :create do |c|
 
     password = ask('Password: ') { |char| char.echo = false }
 
-    cli({ :repository => repository, :description => options.description, :username => username, :password => password })
+    cli({ :repository => repository, :description => options.description, :wants_ssh => options.ssh, :username => username, :password => password })
   end
 end
 
