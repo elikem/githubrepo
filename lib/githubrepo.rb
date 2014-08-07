@@ -41,15 +41,11 @@ module Githubrepo
   def self.parse_response_from(post, wants_ssh)
     attributes = post
 
-    ssh_url =
-        if attributes['ssh_url'] != nil
-          attributes['ssh_url']
-        end
-
-    clone_url =
-        if attributes['clone_url'] != nil
-          attributes['clone_url']
-        end
+    if wants_ssh
+      repo_url = attributes['ssh_url']
+    else
+      repo_url = attributes['clone_url']
+    end
 
     message =
         if attributes['message'] != nil
@@ -60,9 +56,6 @@ module Githubrepo
         if attributes['errors'] != nil
           attributes['errors'].first['message']
         end
-
-    repo_url = clone_url
-    repo_url = ssh_url if wants_ssh
 
     # messages to console
     if repo_url
