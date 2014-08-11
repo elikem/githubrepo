@@ -1,5 +1,5 @@
 # Githubrepo
-This gem is a Command Line Interface to do only thing... create GitHub repositories.
+This gem is a Command Line Interface to do only one thing... create GitHub repositories.
 
 ## Installation
 
