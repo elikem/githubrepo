@@ -1,6 +1,4 @@
 require 'spec_helper'
-require 'active_support/core_ext/kernel/reporting'
-require_relative '../lib/githubrepo'
 
 describe 'githubrepo' do
   before(:each) do
