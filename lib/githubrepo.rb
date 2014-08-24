@@ -63,10 +63,14 @@ module Githubrepo
         puts "#{repo_url}  ---  COPIED TO CLIPBOARD"
         Clipboard.copy repo_url
       elsif OS.linux?
-        puts repo_url
-        Clipboard.copy repo_url
-        puts "If xclip is installed, repository URL has been added to your clipboard."
-        puts "debian/ubuntu: apt-get install xclip"
+        print repo_url
+        if `which xclip`
+          print " --- COPIED TO CLIPBOARD\n"
+          Clipboard.copy repo_url
+        else
+          puts "\nInstall xclip if you want to auto-copy repository URL to your clipboard."
+          puts "debian/ubuntu: apt-get install xclip"
+        end
 
       # Add windows support in the future
       # elsif OS.windows?
