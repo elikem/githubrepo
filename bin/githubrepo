@@ -31,12 +31,6 @@ command :create do |c|
     description = options.description
     wants_ssh = options.ssh
 
-    if %x(which xclip)
-      puts "%x - YES"
-    elsif system('which xclip')
-      puts "system - YES"
-    end
-
     # check for repository argument
     if repository.nil?
       puts 'repository'
