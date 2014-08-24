@@ -64,7 +64,7 @@ module Githubrepo
         Clipboard.copy repo_url
       elsif OS.linux?
         print repo_url
-        if `which xclip`
+        unless `which xclip`.empty?
           print " --- COPIED TO CLIPBOARD\n"
           Clipboard.copy repo_url
         else
