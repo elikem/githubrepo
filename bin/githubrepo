@@ -19,7 +19,7 @@ command :create do |c|
   c.description = 'githubrepo create REPO_NAME -d REPO_DESCRIPTION --ssh [optional, will give you the SSH link instead of HTTP]'
 
   c.example 'usage', 'githubrepo create REPO_NAME'
-  c.example 'usage', 'githubrepo REPO_NAME'
+  c.example 'shorthand', 'githubrepo REPO_NAME'
   c.example 'description', 'githubrepo create REPO_NAME -d "short description"'
   c.example 'SSH URL', 'githubrepo REPO_NAME -s'
 
@@ -29,7 +29,7 @@ command :create do |c|
   c.action do |args, options|
     repository = args.shift
     description = options.description
-    ssh = options.ssh
+    wants_ssh = options.ssh
 
     # check for repository argument
     if repository.nil?
@@ -49,7 +49,7 @@ command :create do |c|
     password = ask('Password: ') { |char| char.echo = false }
 
     # package attributes for http api payload
-    cli({ :repository => repository, :description => description, :wants_ssh => ssh, :username => username, :password => password })
+    cli({ :repository => repository, :description => description, :wants_ssh => wants_ssh, :username => username, :password => password })
   end
 end
 
