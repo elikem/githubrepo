@@ -29,6 +29,7 @@ command :create do |c|
   c.action do |args, options|
     repository = args.shift
     description = options.description
+    ssh = options.ssh
 
     # check for repository argument
     if repository.nil?
