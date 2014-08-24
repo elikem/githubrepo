@@ -63,13 +63,21 @@ module Githubrepo
         puts "#{repo_url}  ---  COPIED TO CLIPBOARD"
         Clipboard.copy repo_url
       elsif OS.linux?
+        # print repo_url
+        # unless `which xclip`.empty?
+        #   print " --- COPIED TO CLIPBOARD\n"
+        #   Clipboard.copy repo_url
+        # else
+        #   puts "\nInstall xclip if you want to auto-copy repository URL to your clipboard."
+        #   puts "debian/ubuntu: apt-get install xclip"
+        # end
         print repo_url
-        unless `which xclip`.empty?
+        if Gem::Specification::find_all_by_name('ffi').any?
           print " --- COPIED TO CLIPBOARD\n"
           Clipboard.copy repo_url
         else
-          puts "\nInstall xclip if you want to auto-copy repository URL to your clipboard."
-          puts "debian/ubuntu: apt-get install xclip"
+          puts "Install ruby gem 'ffi' to auto-copy repository to your clipboard."
+          puts "gem install ffi"
         end
       elsif OS.windows?
         print repo_url
