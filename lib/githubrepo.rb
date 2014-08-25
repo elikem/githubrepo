@@ -34,14 +34,14 @@ module Githubrepo
         }.to_json
     )
 
-    Githubrepo.parse_response_from(post, attributes[:wants_ssh])
+    Githubrepo.parse_response_from( post.merge(attributes) )
   end
 
   # DRY this by moving to a Parse.response_from(post)
-  def self.parse_response_from(post, wants_ssh)
+  def self.parse_response_from(post)
     attributes = post
 
-    if wants_ssh
+    if attributes[:wants_ssh]
       repo_url = attributes['ssh_url']
     else
       repo_url = attributes['clone_url']
@@ -73,7 +73,7 @@ module Githubrepo
       #   Clipboard.copy clone_url
       #   # Will Clipboard output clone_url to console if ffi is not installed?
       #   # Below is what it looks like when Clipboard requirements are met
-      #   # https://github.com/user/*.git  ---  COPIED TO CLIPBOARD 
+      #   # https://github.com/user/*.git  ---  COPIED TO CLIPBOARD
       #   puts "If ffi is installed, repository URL has been added to your clipboard."
       #   puts "for installation: gem install ffi"
       else
