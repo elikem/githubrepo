@@ -35,6 +35,11 @@ module Githubrepo
     )
 
     Githubrepo.parse_response_from( post.merge(attributes) )
+
+    # for testing purposes only -- rspec
+    if attributes[:rspec]
+      return post
+    end
   end
 
   # DRY this by moving to a Parse.response_from(post)
@@ -84,6 +89,7 @@ module Githubrepo
         puts repo_url
       end
     end
+
     puts message.capitalize if message
     puts error_message.capitalize if error_message
   end
