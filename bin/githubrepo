@@ -4,7 +4,7 @@ require File.expand_path '../lib/githubrepo', File.dirname(__FILE__)
 require 'commander/import'
 
 program :name, 'githubrepo'
-program :version, '0.2.2'
+program :version, '0.3.0'
 program :description, 'Create GitHub repositories from the command line.
 
 OSX: repository URL is automatically copied to clipboard.

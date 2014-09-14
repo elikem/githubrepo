@@ -23,7 +23,7 @@ describe 'Githubrepo' do
     end
   end
 
-  it 'requests to create a Github repo WITHOUT wants_ssh' do
+  it 'requests to create a Github repo without wants_ssh' do
     VCR.use_cassette('create a repository', :record => :once) do
       attributes = ({ :repository => 'test_repo',
                       :description => 'description',

@@ -5,7 +5,7 @@ RSpec::Core::RakeTask.new(:spec) do |task|
   task.rspec_opts = ['--color', '--format', 'documentation']
 end
 
-desc "Run in IRB for debugging"
+desc 'Run in IRB for debugging'
 task :console do
   require 'irb'
   require 'irb/completion'
