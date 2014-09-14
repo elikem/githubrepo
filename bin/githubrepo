@@ -2,6 +2,7 @@
 
 require File.expand_path '../lib/githubrepo', File.dirname(__FILE__)
 require 'commander/import'
+require 'githubrepo/version'
 
 program :name, 'githubrepo'
 program :version, '0.3.0'
@@ -51,6 +52,20 @@ command :create do |c|
     # package attributes for http api payload
     cli({ :repository => repository, :description => description, :wants_ssh => wants_ssh, :username => username, :password => password })
   end
+end
+
+command :version do |v|
+  v.syntax = 'githubrepo version [options]'
+  v.description = 'githubrepo version'
+
+  v.example 'usage', 'githubrepo version'
+
+  v.action do |args, options|
+    version = args.shift
+  end
+
+  # outputs version number
+  puts "Githubrepo #{Githubrepo::VERSION}"
 end
 
 # set default action for gem
